@@ -10,6 +10,17 @@
   </head>
 
   <body>
+  <% if user_signed_in? %>
+  <%= link_to "Home", "#" %>
+  <%= link_to "Users", "#" %>
+  <%= link_to "Bookers", "#" %>
+  <%= link_to "logout", "#", method: :delete %>
+  <% else %>
+  <%= link_to "Home", "#" %>
+  <%= link_to "About", "#" %>
+  <%= link_to "sign up", "#" %>
+  <%= link_to "login", "#" %>
+  <% end %>
     <%= yield %>
   </body>
 </html>
