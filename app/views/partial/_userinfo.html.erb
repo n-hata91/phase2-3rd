@@ -3,22 +3,21 @@
 
 
 <div>
-  <% users.each do |user| %>
+
     <div>
-      <%= attachment_image_tag user, :profile_image_id, size: "100x100", class: "", fallback: "no_image.jpg" %>
+      <%= attachment_image_tag current_user, :profile_image, size: "100x100", class: "", fallback: "no_image.jpg" %>
     </div>
     <hr>
     <div>
       <tr>
         <th>name</th>
-        <th><%= user.name %></th>
+        <th><%= current_user.name %></th>
       </tr>
       <tr>
         <th>introduction</th>
-        <th><%= user.introduction %></th>
+        <th><%= current_user.introduction %></th>
       </tr>
-    </div>
-  <% end %>  
+    </div>  
   <%= link_to edit_user_path(current_user.id) do %>
   <span>@@@</span>
   <% end %>

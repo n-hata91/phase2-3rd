@@ -21,6 +21,7 @@
     <%= link_to "sign up", new_user_registration_path %>
     <%= link_to "login", new_user_session_path %>
   <% end %>
+  <%= flash[:notice] %>
     <%= yield %>
     <p>CpoyRight Infratop.inc</p>
   </body>
