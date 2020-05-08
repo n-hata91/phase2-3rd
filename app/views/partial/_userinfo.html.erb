@@ -26,18 +26,16 @@
 <div>
   <h2>New book</h2>
   <div>
-    <%# <%= form_for @book do |f| %> %>
-      <%# <%= render 'layouts/error_messages', f: f.object %> %>
-      <%# <div> %>
-      <%# <%= f.label :Title, "Title" %> %>
-      <%# <%= f.text_field :title %> %>
-      <%# </div> %>
-      <%# <div> %>
-      <%# <%= f.label :opinion, "Opinion" %> %>
-      <%# <%= f.text_area :opinion %> %>
-      <%# </div> %>
-      <%# <%= f.submit "Create Book" %> %>
-      
-    <%# <% end %> %>
+    <%= form_for(book, url: {controller: "books", action: "create"}) do |f| %>
+      <div>
+      <%= f.label :title, "Title" %>
+      <%= f.text_field :title %>
+      </div>
+      <div>
+      <%= f.label :body, "Opinion" %>
+      <%= f.text_area :body %>
+      </div>
+      <%= f.submit "Create Book" %>
+    <% end %>
   </div>
 </div>
