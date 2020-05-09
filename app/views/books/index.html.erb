@@ -1,5 +1,8 @@
+<%= render 'partial/error_msg', obj: @book %>
+
 <h2>Books</h2>
-<%= render 'partial/userinfo', book: @book %>
+<%= render 'partial/userinfo', book: @book, user: current_user%>
+
 <div>
   <tr>
     <th></th>
@@ -9,9 +12,13 @@
   </tr>
   <tr>
   <% @books.each do |book| %>
-    <td><%= attachment_image_tag book.user, :profile_image, size: "40x40" %></td>
-    <td><%= book.title %></td>
-    <td><%= book.body %></td>
+    <%= link_to(user_path(book)) do %>
+      <td><%= attachment_image_tag book.user, :profile_image, size: "40x40" %></td>
+    <% end %>
+    <%= link_to(book_path(book)) do %>
+      <td><%= book.title %></td>
+    <% end %>
+      <td><%= book.body %></td>
   <% end %>
   </tr>
 </div>

@@ -1,7 +1,8 @@
 <h2>Book detail</h2>
+<%= render 'partial/userinfo', book: @new, user: @user %>
 
 <%= @book.title %>
 <%= @book.body %>
 
-<%= link_to "Edit", "/" %>
-<%= link_to "Destroy", "/" %>
+<%= link_to "Edit", edit_book_path(params[:id]) %>
+<%= link_to "Destroy", book_path(@book), method: :delete, "data-confirm" => "本当に削除しますか？" %>

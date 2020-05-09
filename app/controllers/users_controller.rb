@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   def show
     @books = Book.where(user_id: params[:id])
     @book = Book.new
+    @user = User.find(params[:id])
   end
   
   def edit
@@ -24,7 +25,7 @@ class UsersController < ApplicationController
       redirect_to user_path(@user.id)
     else
       flash[:notice] = "error, something went wrong"
-      redirect_to edit_user_path(@user.id)
+      render :edit
     end
   end
 

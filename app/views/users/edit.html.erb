@@ -1,4 +1,6 @@
 <h2>User info</h2>
+<%= render 'partial/error_msg', obj: @user %>
+
 <%= form_for(@user) do |f| %>
 <div>
   <%= f.label :name, "Name" %>
