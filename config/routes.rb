@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get '/home/about' => 'users#about', as: "about"
   devise_for :users, controllers: {
     sessions: 'users/sessions',
-    registrations: 'users/registrations'
+    registrations: 'users/registrations',
   }
 
   resources :users, only: [:index, :show, :edit, :update]

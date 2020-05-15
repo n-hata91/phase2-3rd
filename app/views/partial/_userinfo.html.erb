@@ -4,7 +4,6 @@
       <div>
         <%= attachment_image_tag user, :profile_image, size: "100x100", class: ".attachment user profile_image fallback", fallback: "no_image.jpg" %>
       </div>
-      <hr>
       <div>
         <table class="table">
           <tbody>
@@ -18,7 +17,9 @@
             </tr>
           </tbody>
         </table>
-      </div>  
+      </div>
+  </div>
+  <div class="row">
   <% if user.id == current_user.id %>
     <%= link_to edit_user_path(user.id) do %>
       <span class="col-xs-12 btn btn-default glyphicon glyphicon-wrench" aria-hidden="true"></span>
@@ -28,7 +29,6 @@
       <span class="col-xs-12 btn btn-default glyphicon glyphicon-wrench" aria-hidden="true"></span>
     <% end %>
   <% end %>
-
   </div>
 
   <div>

@@ -4,13 +4,11 @@
     <title>Bookers2</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <header class="navbar bavbar-fixed-top navbar-inverse">
+    <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
         <nav class="nav navbar-nav navbar-left"><span>Bookers</span></nav>
         <nav class="nav navbar-nav navbar-right">
@@ -64,11 +62,13 @@
         </nav>
       </div>
     </header>
-      <%= flash[:notice] %>
-      <div class="body">
-        <div class="container">
+    <div class="body">
+      <div class="container">
+        <p id="notice"><%= notice %></p>
           <div class="row">
-            <%= yield %>
+          <%= yield %>
+          </div>
+          <div class="row">
             <div class="col-xs-3 col-xs-offset-9"><p>CpoyRight Infratop.inc</p></div>
           </div>
         </div>
