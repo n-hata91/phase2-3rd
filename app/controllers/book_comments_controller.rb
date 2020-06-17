@@ -1,4 +1,12 @@
 class BookCommentsController < ApplicationController
+  before_action :correct_user, only: [:destroy]
+	def correct_user
+    comment = BookComment.find_by(id: params[:id], book_id: params[:book_id])
+    if current_user.id != comment.user_id
+      redirect_back(fallback_location: root_path)
+		end
+  end
+
 
   def create
     book = Book.find(params[:book_id])
